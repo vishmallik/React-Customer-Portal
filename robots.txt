@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /images/
+
+
+# Allow indexing of the main content
+Allow: /
