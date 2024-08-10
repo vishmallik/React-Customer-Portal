@@ -3,9 +3,13 @@ import CustomerDetails from "./components/CustomerDetails";
 import CustomerList from "./components/CustomerList";
 import logo from "/images/cube.png";
 import "react-loading-skeleton/dist/skeleton.css";
+import { customers } from "./utils/customers";
+import { Customer } from "./types/customer";
 
 function App() {
-  const [currentSelectedUser, setCurrentSelectedUser] = useState(1);
+  const [currentSelectedUser, setCurrentSelectedUser] = useState<Customer>(
+    customers[0]
+  );
   return (
     <>
       <header className=" text-center text-white p-4 bg-black  flex justify-between items-center rounded-b-lg">
@@ -19,7 +23,7 @@ function App() {
           setCurrentSelectedUser={setCurrentSelectedUser}
           currentSelectedUser={currentSelectedUser}
         />
-        <CustomerDetails userId={currentSelectedUser} />
+        <CustomerDetails currentSelectedUser={currentSelectedUser} />
       </main>
       <footer className=" text-center text-white p-4 bg-black rounded-t-lg">
         <small>Visawjeet Mallik &copy; 2024</small>
